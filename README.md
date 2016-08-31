@@ -3,7 +3,9 @@
 index.html now has the requisite 90+ score on PageSpeed Insights, and views/pizza.html now renders at a consistent 60FPS. Details about the optimizations for Cameron's pizza app is located in the comments of views/js/main.js. 
 
 To view the page and the app, you can also use the project's github page - links are below: 
+<br>
 https://thanh-ly.github.io/frontend-nanodegree-mobile-portfolio/
+<br>
 https://thanh-ly.github.io/frontend-nanodegree-mobile-portfolio/views/pizza.html
 
 
