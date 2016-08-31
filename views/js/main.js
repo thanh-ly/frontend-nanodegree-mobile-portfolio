@@ -403,6 +403,7 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
+  // defined the element query for cleaner code
   function changeSliderLabel(size) {
     var pizzaSize = document.getElementById('pizzaSize').innerHTML;
     switch(size) {
@@ -423,6 +424,8 @@ var resizePizzas = function(size) {
   changeSliderLabel(size);
 
   // Iterates through pizza elements on the page and changes their widths. rewritten per Cameron's lesson on FSL
+  // element query is pulled out of the loop and defined the local scope. Pizza element size is 
+  // simplified to compute only as a percentage without pixel conversion
   function changePizzaSizes(size) {
     switch(size) {
         case "1":
@@ -488,6 +491,9 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
 // Moves the sliding background pizzas based on scroll position
+// defined expensive queries (cachedScrollTop) outside of the loops and in the local scope
+// sets up an empty array to store calculated scroll values instead of calculating at 
+// every pizza item
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
@@ -520,6 +526,7 @@ function updatePositions() {
 window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
+// reduced the amount of pizzas created, and pulled the element query out of the loop into the local scope
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
