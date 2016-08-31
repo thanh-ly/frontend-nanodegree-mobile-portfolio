@@ -1,3 +1,12 @@
+## Optimizations revisions
+
+index.html now has the requisite 90+ score on PageSpeed Insights, and views/pizza.html now renders at a consistent 60FPS. Details about the optimizations for Cameron's pizza app is located in the comments of views/js/main.js. 
+
+To view the page and the app, you can also use the project's github page - links are below: 
+https://thanh-ly.github.io/frontend-nanodegree-mobile-portfolio/
+https://thanh-ly.github.io/frontend-nanodegree-mobile-portfolio/views/pizza.html
+
+
 ## Website Performance Optimization portfolio project
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
