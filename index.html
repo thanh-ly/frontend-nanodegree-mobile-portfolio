@@ -8,12 +8,12 @@
     <title>Cameron Pittman: Portfolio</title>
 
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<!--     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> -->
 
-<!--     <link href="css/style.css" rel="stylesheet" media="all"> -->
-    <link href="css/print.css" rel="stylesheet" media="print">
+<!--     <link href="css/style.css" rel="stylesheet" media="all">
+    <link href="css/print.css" rel="stylesheet" media="print"> -->
 
-    <script>
+    <script async>
       (function(w,g){w['GoogleAnalyticsObject']=g;
       w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
 
@@ -21,11 +21,24 @@
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
-    <script src="http://www.google-analytics.com/analytics.js"></script>
+    <script async src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.js"></script>
 
 <!-- inlining the stylesheet -->
-    <style>
+    <style media="print">
+    @media print {
+    * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+    a, a:visited { color: #444 !important; text-decoration: underline; }
+    a[href]:after { content: " (" attr(href) ")"; }
+    tr, img { page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+    @page { margin: 0.5cm; }
+    p, h2, h3 { orphans: 3; widows: 3; }
+    h2, h3{ page-break-after: avoid; }
+    }
+    </style>
+
+    <style media="screen">
     html {
     font-size: 100%;
     overflow-y: scroll;
@@ -121,5 +134,20 @@
         <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
       </footer>
     </div>
+
+<!--   webfont loader script -->
+  <script>
+    WebFontConfig = {
+      google: {
+       families: ["Open Sans Condensed:400,700"]
+      }
+    };
+    (function(d) {
+      var wf = d.createElement("script"), s = d.scripts[0];
+      wf.src = "https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js";
+      s.parentNode.insertBefore(wf, s);
+     })(document);
+  </script>
+
   </body>
 </html>
