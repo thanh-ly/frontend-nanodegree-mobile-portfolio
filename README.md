@@ -17,9 +17,8 @@ Optimizations made:
 
 ####views/main.js
 * Optimized changePizzaSizes by moving the expensive DOM queries outside of the calculation loops and simplifying how the resize calculations are made. The widths of the pizza elements are now set with a predetermined percentage instead of calculating a new width in pixels every time the slider is moved. 
-* Optimized updatePositions by moving and caching document.body.scrollTop outside of the loop. The math calculations to determine the background pizza location is moved outside of the calculation loop and stored in an array so the calculation is not made for every background pizza element. 
+* Optimized updatePositions by moving and caching document.body.scrollTop and query selector for the background pizza element outside of the loop. The math calculations to determine the background pizza location is moved outside of the calculation loop and cached in an array so the calculation is not made for every background pizza element. 
 * The number of background pizza elements are also reduced from 200 to 40. 
-* The DOM query to locate the background pizza elements are also moved to the global scope so that multiple functions can access it without performing the query with every individual loop. 
 * document.querySelectors are changed to document.getElementById or document.getElementByClassName when appropriate.
 
 
